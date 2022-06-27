@@ -1,0 +1,16 @@
+{'Lecture': {'id': 'title', 'type': 'title', 'title': [
+            {'type': 'text', 'text': {'content': 'Formale Grundlagen der Informatik', 'link': None
+                }
+            }
+        ]
+    }, 'Dates': {'date': {'start': '01-07-22T08: 30: 00.000+2: 00', 'end': '01-07-22T11: 45: 00.000+2: 00', 'time_zone': None
+        }
+    }, 'Lecturer': {'select': {'name': 'Prof. Dr. Matthias Maßmann'
+        }
+    }, 'Type': {'select': {'name': 'Course 📙📙📙'
+        }
+    }, 'Room': {'number': 203
+    }, 'Topic': {'select': {'name': 'Formale Grundlagen der Informatik'
+        }
+    }
+}
