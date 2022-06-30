@@ -52,6 +52,8 @@ class Lecture:
         
         # if there is still no valid option found
         if not found:
+            print(attribute_value)
+            print(options)
             print("No match.")
              
         # returning data object

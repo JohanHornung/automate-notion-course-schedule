@@ -51,10 +51,6 @@ def parse_schedule_data(schedule_data: list[str]) -> list[Lecture]:
         
         # additional lecture informations (topic and lecturer)
         topic = item[3]
-        # too much characters for this topic
-        if topic == "Programmieren,Design und Implementierung von Algorithmen II":
-            topic = "Prog. Design und Implementierung von Algorithmen II"
-        
         # treating special characters in lecturer names
         lecturer = item[4].replace("\xa0", " ") if item[4] != '' else 'Group Work'
         
@@ -104,6 +100,10 @@ def parse_schedule_data(schedule_data: list[str]) -> list[Lecture]:
         options = new_page_data["Topic"]["select"]["options"]
         new_page_data["Topic"]["select"] = lecture.select_from_options(attribute, options)
         
+        # TODO: find a way to get one drive/goodnotes links for protocols or scripts
+        new_page_data["Script"]["files"] = [] # for now
+        new_page_data["Protocol"]["files"] = [] # for now
+
         # adding lecture data to the lectures data attribute
         lecture.data = new_page
         # adding lecture object to collection
