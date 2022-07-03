@@ -8,12 +8,10 @@ def push(pages: list[Lecture]) -> str:
     print("Pushing data (lecture pages) to Notion DB...\n")
     
     # Notion DB API connection
-    base_url = f'https://api.notion.com/v1/pages'
+    base_url = 'https://api.notion.com/v1/pages'
     header = {
         "Authorization": secrets.NOTION_INTEGRATION_TOKEN,
-        "Accept": "application/json",
-        "Notion-Version": "2022-02-22",
-        "Content-Type": "application/json"
+        "Notion-Version": "2022-02-22"
     }
 
     # pushing each new page entry to DB
@@ -42,8 +40,11 @@ def push(pages: list[Lecture]) -> str:
             requests.exceptions.InvalidJSONError
         ) as err:
             print(err)    
+        
         # timeout
         time.sleep(2)
+
+
 
 
 # entry point
