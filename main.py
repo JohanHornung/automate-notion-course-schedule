@@ -27,6 +27,7 @@ def push(pages: list[Lecture]) -> str:
                 base_url, 
                 json=payload,
                 headers=header, 
+                # data=page.data
             )
             # raising error if there´s one
             response.raise_for_status()

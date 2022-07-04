@@ -25,6 +25,7 @@ def parse_schedule_file(filepath: str) -> list[str]:
         
     return schedule_data
 
+
 # parsing schedule data entries to data page object (for notion page creation)
 def parse_schedule_data(schedule_data: list[str]) -> list[Lecture]:
     print("Parsing schedule data...\n")
@@ -35,7 +36,7 @@ def parse_schedule_data(schedule_data: list[str]) -> list[Lecture]:
         new_page = copy.deepcopy(secrets.NOTION_DB_PROPERTY_TEMPLATE)
         new_page_data = new_page["properties"]
 
-        # changing date & time format: YYYY-MM-DDTHH:MM:SS.MMS+02:00
+        
         start_date = item[0].replace(".", "-")
         # lectures will always be on the same day
         end_date = start_date
@@ -44,7 +45,7 @@ def parse_schedule_data(schedule_data: list[str]) -> list[Lecture]:
         end_time = item[2]
 
         # TODO: dynamic summer time
-        # formatting date/time
+        # date/time format: YYYY-MM-DDTHH:MM:SS.MMS+02:00
         start_date_fmt = f"{start_date}T{start_time}:00.000+2:00" # summer time
         end_date_fmt = f"{end_date}T{end_time}:00.000+2:00"
         
